@@ -547,19 +547,12 @@ fn augment_mnist_dataset(images: &[u8], labels: &[u8]) -> Vec<GrayImage> {
         .collect()
 }
 
-use macroquad::prelude::*;
 
 
-fn get_conf() -> Conf {
-    Conf {
-        fullscreen: true,
-        window_resizable: true,
-        ..Default::default()
-    }
-}
 
-#[macroquad::main(get_conf)]
-async fn main() {
+
+
+fn main() {
     let mnist = MnistBuilder::new()
         .base_path("data/")
         .training_images_filename("train-images.idx3-ubyte")
